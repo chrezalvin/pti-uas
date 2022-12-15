@@ -1,8 +1,12 @@
-import { ChangeEvent, MouseEvent, useState } from "react"
+import { ChangeEvent, MouseEvent, useState, KeyboardEvent } from "react"
+
+const MAX_PLAYER = 4;
 
 function firstSecond(num: number){
     if(num <= 0)
         throw new Error("num cannot be lower or equal to zero");
+    else if (num > MAX_PLAYER)
+        return "Max";
 
     switch(num){
         case 1: return "1st";
@@ -16,15 +20,41 @@ export default function Home(){
     const [name, setName] = useState("");
     const [names, setNames] = useState<string[]>([]);
 
+    function setNewName(pname: string){
+        if(name === "" || names.find(name => pname === name))
+            return;
+        setNames([pname, ...names]);
+        setName("");
+    }
+
     function handleNameOnChange(e: ChangeEvent<HTMLInputElement>){
         setName(e.target.value);
     }
 
     function handleAddNameOnClick(e: MouseEvent<HTMLButtonElement>){
         e.preventDefault();
-        setNames([...names, name]);
-        setName("");
+        setNewName(name);
     }
+
+    function handleOnKeyDown(e: KeyboardEvent<HTMLInputElement>){
+        if(e.key === "Enter")
+            setNewName(name);
+    }
+
+    let playerNameUI: JSX.Element | JSX.Element[] = (
+        <tr>
+            <td colSpan={2} className="text-center">No player</td>
+        </tr>);
+
+    if(names.length !== 0)
+        playerNameUI = names.map(name => {
+            return (
+                <tr>
+                    <td colSpan={2} className="text-center">{name}</td>
+                </tr>
+            )
+        })
+
 
     return(
         <>
@@ -39,12 +69,13 @@ export default function Home(){
                         placeholder="Player Name"
                         value={name}
                         onChange={handleNameOnChange}
+                        onKeyDown={handleOnKeyDown}
                     />
                 </div>
                 <div className="d-flex justify-content-evenly gap-1">
                     <button 
                         className="btn btn-primary"
-                        onClick={handleAddNameOnClick}    
+                        onClick={handleAddNameOnClick}
                     >Add Player</button>
                     <button className="btn btn-primary">Play Game!</button>
                 </div>
@@ -55,9 +86,7 @@ export default function Home(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colSpan={2} className="text-center">No player</td>
-                        </tr>
+                        {playerNameUI}
                     </tbody>
                 </table>
             </div>
