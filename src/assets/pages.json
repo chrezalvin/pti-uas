@@ -1,0 +1,23 @@
+[
+    {
+        "route": "/",
+        "routeName": "home",
+        "displayName": "Home",
+        "isIndex": true
+    },
+    {
+        "route": "/about",
+        "routeName": "about",
+        "displayName": "AboutUs"
+    },
+    {
+        "route": "/game",
+        "routeName": "game",
+        "displayName": "Game"
+    },
+    {
+        "route": "/faq",
+        "routeName": "faq",
+        "displayName": "FAQ"
+    },
+]

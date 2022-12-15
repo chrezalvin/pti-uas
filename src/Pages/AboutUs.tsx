@@ -26,7 +26,7 @@ export default function AboutUs(){
     
     return(
         <>
-            <Header gotoPage={(a) => {}} pages={[]}/>
+            {/* <Header gotoPage={(a) => {}} pages={[]}/> */}
             <div className="d-flex justify-content-center">
                 <h1 className="title-border">About Us</h1>
             </div>
