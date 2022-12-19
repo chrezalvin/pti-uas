@@ -5,9 +5,9 @@
 - Stephen Tanuwijaya (00000042628)
 
 ## Cara memainkan permainan
-klik tulang untuk mengambil tulang
-Setiap kali tulang diambil, terdapat kemungkinan spike akan bangun
-Orang yang membangunkan spike pertama kali kalah
+- klik tulang untuk mengambil tulang
+- Setiap kali tulang diambil, terdapat kemungkinan spike akan bangun
+- Orang yang membangunkan spike pertama kali kalah
 
 ## other stuff...
 - project ini menggunakan react typescript
