@@ -1,6 +1,5 @@
 import Team, {ITeam} from "../Components/Team";
-import Header from "../Components/Header";
-import DATA_TEAM from "../assets/teams.json";
+import DATA_TEAM from "../assets/teams";
 import defaultAvatar from "../assets/avatars/default-avatar.jpg";
 import "./AboutUs.css";
 
@@ -17,7 +16,7 @@ export default function AboutUs(){
                     name={team.name} 
                     nim={team.nim} 
                     taskList={team.daftarTugas}
-                    avatar={defaultAvatar}
+                    avatar={team.avatar ? team.avatar : defaultAvatar}
                     key={`team-${idx}`}
                 />
             </div>

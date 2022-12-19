@@ -1,0 +1,8 @@
+{
+    "UMN": {
+        "lat": -6.257504,
+        "lon": 106.618165
+    },
+    "API_KEY": "434377b72bf540579eed810bf962305f",
+    "base_OpenWeather": "https://api.openweathermap.org/data/2.5/weather"
+}

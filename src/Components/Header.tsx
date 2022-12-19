@@ -11,8 +11,8 @@ const pathMapping = [
         name: "Home"
     },
     {   
-        path: "/faq",
-        name: "FAQ"
+        path: "/tutorial",
+        name: "Tutorial"
     },
     {   
         path: "/about",
@@ -23,6 +23,10 @@ const pathMapping = [
 
 export default function Header(props: IProps){
     const location = useLocation();
+
+    // remove navbar if game is running
+    if(location.pathname === "/game")
+        return (<Outlet />);
 
     const navUI = pathMapping.map(path => {
         return (
@@ -39,7 +43,7 @@ export default function Header(props: IProps){
 
     return(
     <>
-        <header className="container d-flex justify-content-center py-3">
+        <header className="container d-flex justify-content-center py-3 position-sticky">
             <ul className="nav nav-pills">
                 {navUI}
             </ul>
