@@ -11,7 +11,7 @@ Orang yang membangunkan spike pertama kali kalah
 
 ## other stuff...
 - project ini menggunakan react typescript
-- link github uas dapat diakses di [https://github.com/chrezalvin/pti-uas]https://github.com/chrezalvin/pti-uas
+- link github uas dapat diakses di https://github.com/chrezalvin/pti-uas
 - `npm i` terlebih dahulu sebelum run app
 - `npm start` untuk run app (just in case)
 - semua gambar dan audio terdapat di `/src/assets`
