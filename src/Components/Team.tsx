@@ -11,7 +11,7 @@ export default function Team(props: ITeam){
             <div className="col-3 d-flex align-self-center">
                 <img 
                     src={props.avatar ? props.avatar: "./default-avatar.jpg"} 
-                    className="border border-dark rounded-circle img-fluid" 
+                    className="rounded-circle img-fluid" 
                     alt={`${props.name}'s avatar`}
                 />
             </div>
@@ -21,7 +21,7 @@ export default function Team(props: ITeam){
                 <div className="">
                     <h4>Daftar Tugas</h4>
                     <ul className="tugas">
-                        {props.taskList.map(task => <li>{task}</li>)}
+                        {props.taskList.length === 0 ? <li>Tidak Ada</li> : props.taskList.map(task => <li>{task}</li>)}
                     </ul>
                 </div>
             </div>
