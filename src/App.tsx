@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from "./Components/Header";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import "./App.css";
 
 import AboutUs from "./Pages/AboutUs";
 import Game from "./Pages/Game";
